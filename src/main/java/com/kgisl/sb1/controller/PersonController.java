@@ -34,10 +34,12 @@ public class PersonController {
   @PostMapping("/add")
   public ResponseEntity<String> insertPerson(@RequestBody @Valid Person p) {
    try {
+    System.out.println("kavin");
         return service.insertperson(p);
     } catch (Exception e) {
         return new ResponseEntity<>("Error: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+    
   }
 
   @DeleteMapping("/delete/{id}")
