@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.kgisl.sb1.Model.Person;
-import com.kgisl.sb1.Service.PersonService;
+
+import com.kgisl.sb1.model.Person;
+import com.kgisl.sb1.service.PersonService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
@@ -33,14 +34,10 @@ public class PersonController {
 
   @PostMapping("/add")
   public ResponseEntity<String> insertPerson(@RequestBody @Valid Person p) {
-   try {
-    System.out.println("kavin");
+
         return service.insertperson(p);
-    } catch (Exception e) {
-        return new ResponseEntity<>("Error: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-    }
     
-  }
+}
 
   @DeleteMapping("/delete/{id}")
   public ResponseEntity<Optional<Person>> delete(@PathVariable("id") Long id) {

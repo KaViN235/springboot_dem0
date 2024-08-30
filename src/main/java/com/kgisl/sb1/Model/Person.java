@@ -1,4 +1,4 @@
-package com.kgisl.sb1.Model;
+package com.kgisl.sb1.model;
  import org.springframework.data.annotation.Id;
 
 
