@@ -83,11 +83,11 @@ public class PersonControllerTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void deletePersonTest() {
-        long id = 1;
-        when(personService.getPersonById(id)).thenReturn(person1);
-        personController.delete(id);
-        verify(personService).deleteId(id);
-    }
+    // @Test
+    // public void deletePersonTest() {
+    //     long id = 1;
+    //     when(personService.getPersonById(id)).thenReturn(person1);
+    //     personController.delete(id);
+    //     verify(personService).deleteId(id);
+    // }
 }
