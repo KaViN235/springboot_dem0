@@ -1,0 +1,8 @@
+*[INFO ]-- Starting Sb1ApplicationTests using Java 17.0.10 with PID 7292 (started by kavinkumar.r in D:\sb1)--
+*[INFO ]-- No active profile set, falling back to 1 default profile: "default"--
+*[INFO ]-- HikariPool-1 - Starting...--
+*[INFO ]-- HikariPool-1 - Added connection conn0: url=jdbc:h2:file:~/sb1 user=SA--
+*[INFO ]-- HikariPool-1 - Start completed.--
+*[INFO ]-- Started Sb1ApplicationTests in 7.117 seconds (process running for 12.145)--
+*[INFO ]-- HikariPool-1 - Shutdown initiated...--
+*[INFO ]-- HikariPool-1 - Shutdown completed.--

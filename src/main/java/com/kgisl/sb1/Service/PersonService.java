@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.kgisl.sb1.model.Person;
+import com.kgisl.sb1.entity.Person;
 import com.kgisl.sb1.repository.PersonRepository;
 
 @Service
@@ -18,35 +18,28 @@ public class PersonService {
     PersonRepository rep;
 
     public List<Person> get() {
-
-        return rep.findAll();
+        List<Person> p =rep.findAll();
+       return p;
+    }
+    
+    public Optional<Person> getPersonById(long id) {
+      return rep.findById(id);
     }
 
-    public ResponseEntity<String> insertperson(Person p) {
 
-        System.out.println(rep.findAll());
-        rep.save(p);
-        return new ResponseEntity<>("done", HttpStatus.CREATED);
-
+    public Person insertperson(Person person1) {
+        return rep.save(person1);
     }
 
-    public ResponseEntity<Optional<Person>> deleteId(Long id) {
-        Optional<Person> p = rep.findById(id);
+    public String deleteId(Long id) {
         rep.deleteById(id);
-        return new ResponseEntity<>(p, HttpStatus.ACCEPTED);
+        return "removed";
     }
 
-    public ResponseEntity<Void> update(Long id, Person p) {
-        rep.save(p);
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+    public Person update(Long id, Person p) {
+        
+        return rep.save(p);
     }
 
-    // public ResponseEntity<String> insertperson(long id, String uname, String
-    // email) {
-    // Person p = new Person(id,uname, email);
-    // System.out.println(p);
-    // rep.save(p);
-    // return new ResponseEntity<>("Working",HttpStatus.CREATED);
-    // }
-
+   
 }
